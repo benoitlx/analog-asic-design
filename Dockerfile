@@ -11,6 +11,12 @@ RUN apt-get update && apt-get -y install \
     flex bison \
     libxpm4 libxpm-dev \
     libjpeg9 libjpeg9-dev
+RUN apt-get -y install \
+    autoconf automake libtool \
+    libxaw7 libxaw7-dev \
+    libreadline-dev
 
-COPY ./install.sh /install_script/install.sh
-RUN chmod +x /install_script/install.sh && /install_script/install.sh
+COPY install_scripts/xschem.sh /tmp/xschem.sh
+COPY install_scripts/ngspice.sh /tmp/xschem.sh
+RUN chmod +x /tmp/xschem.sh && /tmp/xschem.sh
+RUN chmod +x /tmp/ngspice.sh && /tmp/ngspice.sh

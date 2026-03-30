@@ -36,6 +36,17 @@
     key: "asic",
     short: "ASIC",
     long: "Application Specific Integrated Circuit"
+  ),
+  (
+    key: "cmos",
+    short: "CMOS",
+    long: "Complementary Metal Oxyde Semiconductor",
+    description: "Both NMOS and PMOS are fabricated on the same chip."
+  ),
+  (
+    key: "bsim",
+    short: "BSIM",
+    long: "Berkeley Short-channel IGFET Model"
   )
 )
 #register-glossary(gloss)
@@ -123,7 +134,36 @@ In the rest of this paper we will use xschem for schematic capture.
 
 - gds3d
 
-= IC design building blocks
+= IC design elements
+
+== Transistors
+
+Structure:
+- MOSFET (MOS)
+- BJT
+- IGBT
+
+Material:
+- germanium
+- silicon
+- gallium arsenide
+- silicon carbide
+- alloy silicon-germanium
+- allotrop of carbon-graphene
+
+Polarity
+- NPN/PNP for BJT
+- N-channel/P-channel for BJT
+
+=== Models
+
+==== Switch
+
+==== Switch + current source
+
+==== #gls("bsim")
+
+==== #gls("psp")
 
 == Simple inverter
 

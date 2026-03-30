@@ -106,7 +106,7 @@ The goal of this paper is to present an opinionated, end-to-end design flow that
 - kicad / eSim
 - https://github.com/thesourcerer8/xschem2kicad
 
-The schematic editor we will use for #gls("asic") design
+In the rest of this paper we will use xschem for schematic capture.
 
 == Simulation
 
@@ -123,11 +123,72 @@ The schematic editor we will use for #gls("asic") design
 
 - gds3d
 
-= IC design building block
+= IC design building blocks
+
+== Simple inverter
+
+=== Theory
+
+==== Ideal Inverter
+
+An inverter is a base circuit for most complex logic gates. It is composed of two transistors and his role is to invert the digital signal in entry. When the input is in high state, the output should be low and the inverse should be true when the input is low.
+
+==== Resistor Inverter
+
+==== MOS Inverter
+
+=== Schematic
+
+In xschem you can load the nmos and pmos components with right click add symbol and add the following components located in `/foss/pdks/ihp-sg13g2/libs.tech/xschem/sg13g2_pr/`
+
+- sg13_lv_pmos
+- sg13_lv_nmos
+
+Add as well generic voltage sources for later simulation.
+Use `w` to create and connect wires between components.
+Don't forget to connect the bulk modulus of the nmos channel to the ground and the one of the pmos channel to `Vdd`.
+
+You should obtain the following result:
+
+#figure(image("assets/inverter/schematic.png", width: 60%), caption: [Schematic Entry of an Inverter in xschem])
+
+=== Simulation
+
+In simulation check `Use simulator/[schename] in schematic dir` in order to find simulation data more easily.
+
+Code-shown symbols:
+
+```
+name=include only_toplevel=false value=".lib cornerMOSlv.lib mos_tt"
+```
+
+```
+name=control only_toplevel=false value=" .control  tran 50p 20n *op save all write inverter-tr.raw  dc V1 0 1.8 1m let gain = -deriv(Vout)/12 save all write inverter-dc-sweep.raw  .endc "
+```
+
+Make sure the netlist format is `spice netlist` in `Options`, `Netlist Format / Symbol Format`.
+Then generate the netlist by clicking of the netlist button (you can view the netlist content by pressing shift-A before clicking on netlist).
+
+At this point ngspice will be able to read our netlist to compute the simulation.
+
+Click the simulation button. An interactive prompt will be opened in a new window. You can interact with the computed simulation in this exact window. For example run a `plot vout` command. You should see a square wave in the ngspice viewer.
+
+I find it usefull to see the result of the simulation directly in our xschem window, so we will add graphs there. `Simulation -> Graphs -> Add waveform graphs`. You can resize the graph by pressing ctrl plus selecting a corner of the graph then pressing m. Double click on the graph, check auto-load then go load the corresponding `.raw` file. You can load different signal by typing their name in the editor.
+
+#figure(image("assets/inverter/final.png"), caption: [Final view of the inverter schematic with simulation results])
+
+=== Layout
+
+=== Post-Layout Checks
+
 
 == Current Mirror
 
 == Operationnal Amplifier
+
+== Howland pump
+
+== Instrumentation Amplifier
 
 = #gls("asic") for a High Temperature Gradient Sensor
 

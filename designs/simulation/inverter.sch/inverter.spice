@@ -1,0 +1,25 @@
+** sch_path: /var/home/bleroux/Documents/stage_IEMN/analog-asic-design/designs/inverter.sch
+**.subckt inverter
+XM1 Vout net1 Vdd Vdd sg13_lv_pmos w=1.0u l=0.45u ng=1
+XM2 Vout net1 0 0 sg13_lv_nmos w=0.15u l=0.13u ng=1
+V1 net1 0 pulse(0 1.8 1ns 1ns 1ns 5ns 10ns)
+V2 Vdd 0 3
+**** begin user architecture code
+
+.lib cornerMOSlv.lib mos_tt
+
+
+
+.control
+
+tran 50p 20n
+*op
+save all
+write inverter.raw
+
+.endc
+
+
+**** end user architecture code
+**.ends
+.end

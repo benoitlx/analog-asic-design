@@ -1,0 +1,10 @@
+[project]
+name = "inverter-py"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "ihp-gdsfactory>=0.2.7",
+    "marimo>=0.21.1",
+]

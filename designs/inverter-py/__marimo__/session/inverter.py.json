@@ -1,0 +1,107 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.21.1",
+    "script_metadata_hash": null
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "e0fd674818642dff6e39e5679eca8a85",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "4e3473af4a6211648ad55b604245b245",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "5e8a352e712f692d64e83b3a58c73927",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Available methods:\n  - absorb\n  - add\n  - add_label\n  - add_polygon\n  - add_port\n  - add_ports\n  - add_ref\n  - add_ref_off_grid\n  - add_route_info\n  - area\n  - auto_rename_ports\n  - base\n  - basename\n  - bbox\n  - bbox_np\n  - boundary\n  - cell_index\n  - center\n  - circuit\n  - connectivity_check\n  - convert_to_static\n  - copy\n  - copy_child_info\n  - copy_layers\n  - create_inst\n  - create_pin\n  - create_port\n  - create_vinst\n  - dbbox\n  - dcenter\n  - dcreate_inst\n  - delete\n  - destroyed\n  - dmirror\n  - dmirror_x\n  - dmirror_y\n  - dmove\n  - dmovex\n  - dmovey\n  - draw_ports\n  - drotate\n  - dsize_info\n  - dup\n  - dx\n  - dxmax\n  - dxmin\n  - dxsize\n  - dy\n  - dymax\n  - dymin\n  - dysize\n  - each_inst\n  - each_overlapping_inst\n  - each_touching_inst\n  - extract\n  - factory_name\n  - fill\n  - fix_spacing\n  - fix_width\n  - flatten\n  - function_name\n  - get_boxes\n  - get_cross_section\n  - get_labels\n  - get_meta_data\n  - get_netlist\n  - get_paths\n  - get_polygons\n  - get_polygons_points\n  - get_ports_list\n  - get_region\n  - ghost_cell\n  - has_factory_name\n  - ibbox\n  - icenter\n  - icreate_inst\n  - imirror\n  - imirror_x\n  - imirror_y\n  - imove\n  - imovex\n  - imovey\n  - info\n  - insert\n  - insert_vinsts\n  - insts\n  - irotate\n  - isize_info\n  - ix\n  - ixmax\n  - ixmin\n  - ixsize\n  - iy\n  - iymax\n  - iymin\n  - iysize\n  - kcl\n  - kdb_cell\n  - l2n\n  - l2n_elec\n  - l2n_ports\n  - layer\n  - layers\n  - layout\n  - library\n  - library_cell\n  - lock\n  - locked\n  - lvs_equivalent_ports\n  - mirror\n  - mirror_x\n  - mirror_y\n  - move\n  - movex\n  - movey\n  - name\n  - netlist\n  - offset\n  - over_under\n  - pins\n  - plot\n  - plot_netlist\n  - plot_netlist_graphviz\n  - ports\n  - pprint_ports\n  - prop_id\n  - read\n  - remap_layers\n  - remove_layers\n  - rotate\n  - routes\n  - schematic\n  - set_meta_data\n  - settings\n  - settings_units\n  - shapes\n  - show\n  - size_info\n  - to_3d\n  - to_dict\n  - to_dtype\n  - to_graphviz\n  - to_itype\n  - transform\n  - trim\n  - vinsts\n  - virtual\n  - write\n  - write_bytes\n  - write_gds\n  - write_netlist\n  - x\n  - xmax\n  - xmin\n  - xsize\n  - y\n  - yaml_tag\n  - ymax\n  - ymin\n  - ysize\n<class 'pydantic.fields.FieldInfo'>\nannotation=NoneType required=False default_factory=dict\n{'cross_section': <function metal1 at 0x7ff04c623ba0>, 'metal1_routing': functools.partial(<function metal_routing at 0x7ff04c001620>, layer=<LayerMapIHP.Metal1drawing: 170>, width=0.28, port_names=('e1', 'e2'), port_types=('electrical', 'electrical'), radius=None), 'metal2_routing': functools.partial(<function metal_routing at 0x7ff04c001620>, layer=<LayerMapIHP.Metal2drawing: 185>, width=0.32, port_names=('e1', 'e2'), port_types=('electrical', 'electrical'), radius=None), 'metal3_routing': functools.partial(<function metal_routing at 0x7ff04c001620>, layer=<LayerMapIHP.Metal3drawing: 200>, width=0.4, port_names=('e1', 'e2'), port_types=('electrical', 'electrical'), radius=None), 'metal_routing': functools.partial(<function metal_routing at 0x7ff04c001620>, layer=<LayerMapIHP.TopMetal2drawing: 354>, width=2.0, port_names=('e1', 'e2'), port_types=('electrical', 'electrical'), radius=None), 'strip': functools.partial(<function metal_routing at 0x7ff04c001620>, layer=<LayerMapIHP.TopMetal2drawing: 354>, width=2.0, port_names=('e1', 'e2'), port_types=('electrical', 'electrical'), radius=None), 'topmetal1_routing': functools.partial(<function metal_routing at 0x7ff04c001620>, layer=<LayerMapIHP.TopMetal1drawing: 340>, width=1.0, port_names=('e1', 'e2'), port_types=('electrical', 'electrical'), radius=None), 'topmetal2_routing': functools.partial(<function metal_routing at 0x7ff04c001620>, layer=<LayerMapIHP.TopMetal2drawing: 354>, width=2.0, port_names=('e1', 'e2'), port_types=('electrical', 'electrical'), radius=None)}\n",
+          "mimetype": "text/plain"
+        }
+      ]
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "577d0e83c97847e7164cbad5741f99ce",
+      "outputs": [
+        {
+          "type": "error",
+          "ename": "exception",
+          "evalue": "Taper component ports do not match the port's layer and width!\nTaper name: taper_gdsfactorypcomponentsptapersptaper_L10_W0p26_W0p2_f622bd27\nPorts: [DPort(self.name='e1', self.width=0.26, trans=r180 *1 0,0, layer=TopMetal2drawing (134/0), port_type=electrical), DPort(self.name='e2', self.width=0.28, trans=r0 *1 10,0, layer=TopMetal2drawing (134/0), port_type=electrical)]\nCross-section: layer=178, width=0.26",
+          "traceback": []
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "moving n\nrotating\n",
+          "mimetype": "text/plain"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "<span class=\"codehilite\"><div class=\"highlight\"><pre><span></span><span class=\"gt\">Traceback (most recent call last):</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_70723/__marimo__cell_bkHC_.py&quot;</span>, line <span class=\"m\">35</span>, in <span class=\"n\">&lt;module&gt;</span>\n<span class=\"w\">    </span><span class=\"n\">inverter</span> <span class=\"o\">=</span> <span class=\"n\">simple_cell</span><span class=\"p\">(</span><span class=\"n\">x</span><span class=\"o\">.</span><span class=\"n\">value</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/var/home/bleroux/Documents/stage_IEMN/analog-asic-design/designs/inverter-py/.venv/lib/python3.13/site-packages/kfactory/layout.py&quot;</span>, line <span class=\"m\">1347</span>, in <span class=\"n\">func</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"n\">wrapper_autocell</span><span class=\"p\">(</span><span class=\"o\">*</span><span class=\"n\">args</span><span class=\"p\">,</span> <span class=\"o\">**</span><span class=\"n\">kwargs</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/var/home/bleroux/Documents/stage_IEMN/analog-asic-design/designs/inverter-py/.venv/lib/python3.13/site-packages/kfactory/decorators.py&quot;</span>, line <span class=\"m\">547</span>, in <span class=\"n\">__call__</span>\n<span class=\"w\">    </span><span class=\"k\">return</span> <span class=\"bp\">self</span><span class=\"o\">.</span><span class=\"n\">_f</span><span class=\"p\">(</span><span class=\"o\">*</span><span class=\"n\">args</span><span class=\"p\">,</span> <span class=\"o\">**</span><span class=\"n\">kwargs</span><span class=\"p\">)</span>\n<span class=\"w\">           </span><span class=\"pm\">~~~~~~~^^^^^^^^^^^^^^^^^</span>\n  File <span class=\"nb\">&quot;/var/home/bleroux/Documents/stage_IEMN/analog-asic-design/designs/inverter-py/.venv/lib/python3.13/site-packages/kfactory/decorators.py&quot;</span>, line <span class=\"m\">521</span>, in <span class=\"n\">wrapper_autocell</span>\n<span class=\"w\">    </span><span class=\"n\">cell_</span> <span class=\"o\">=</span> <span class=\"n\">wrapped_cell</span><span class=\"p\">(</span><span class=\"o\">**</span><span class=\"n\">params</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/var/home/bleroux/Documents/stage_IEMN/analog-asic-design/designs/inverter-py/.venv/lib/python3.13/site-packages/cachetools/_cached.py&quot;</span>, line <span class=\"m\">185</span>, in <span class=\"n\">wrapper</span>\n<span class=\"w\">    </span><span class=\"n\">v</span> <span class=\"o\">=</span> <span class=\"n\">func</span><span class=\"p\">(</span><span class=\"o\">*</span><span class=\"n\">args</span><span class=\"p\">,</span> <span class=\"o\">**</span><span class=\"n\">kwargs</span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/var/home/bleroux/Documents/stage_IEMN/analog-asic-design/designs/inverter-py/.venv/lib/python3.13/site-packages/kfactory/decorators.py&quot;</span>, line <span class=\"m\">406</span>, in <span class=\"n\">wrapped_cell</span>\n<span class=\"w\">    </span><span class=\"n\">cell</span> <span class=\"o\">=</span> <span class=\"n\">f</span><span class=\"p\">(</span><span class=\"o\">**</span><span class=\"n\">params</span><span class=\"p\">)</span>  <span class=\"c1\"># type: ignore[call-arg]</span>\n  File <span class=\"nb\">&quot;/tmp/marimo_70723/__marimo__cell_bkHC_.py&quot;</span>, line <span class=\"m\">22</span>, in <span class=\"n\">simple_cell</span>\n<span class=\"w\">    </span><span class=\"n\">gf</span><span class=\"o\">.</span><span class=\"n\">routing</span><span class=\"o\">.</span><span class=\"n\">route_bundle</span><span class=\"p\">(</span><span class=\"n\">c</span><span class=\"p\">,</span> <span class=\"p\">[</span><span class=\"n\">n</span><span class=\"o\">.</span><span class=\"n\">ports</span><span class=\"p\">[</span><span class=\"s2\">&quot;D&quot;</span><span class=\"p\">]],</span> <span class=\"p\">[</span><span class=\"n\">p</span><span class=\"o\">.</span><span class=\"n\">ports</span><span class=\"p\">[</span><span class=\"s2\">&quot;D&quot;</span><span class=\"p\">]],</span> <span class=\"n\">cross_section</span><span class=\"o\">=</span><span class=\"n\">ihp</span><span class=\"o\">.</span><span class=\"n\">tech</span><span class=\"o\">.</span><span class=\"n\">metal1_routing</span><span class=\"p\">,</span>     <span class=\"n\">layer_transitions</span><span class=\"o\">=</span><span class=\"p\">{</span>\n<span class=\"w\">    </span><span class=\"pm\">~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>\n<span class=\"w\">    </span>    <span class=\"p\">(</span>\n<span class=\"w\">        </span><span class=\"pm\">^</span>\n<span class=\"w\">    </span><span class=\"o\">...&lt;</span><span class=\"mi\">2</span> <span class=\"n\">lines</span><span class=\"o\">&gt;...</span>\n<span class=\"w\">    </span>    <span class=\"p\">):</span> <span class=\"n\">gf</span><span class=\"o\">.</span><span class=\"n\">components</span><span class=\"o\">.</span><span class=\"n\">taper_electrical</span>\n<span class=\"w\">        </span><span class=\"pm\">^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</span>\n<span class=\"w\">    </span><span class=\"p\">})</span>\n<span class=\"w\">    </span><span class=\"pm\">^^</span>\n  File <span class=\"nb\">&quot;/var/home/bleroux/Documents/stage_IEMN/analog-asic-design/designs/inverter-py/.venv/lib/python3.13/site-packages/gdsfactory/routing/route_bundle.py&quot;</span>, line <span class=\"m\">297</span>, in <span class=\"n\">route_bundle</span>\n<span class=\"w\">    </span><span class=\"n\">ports1_</span> <span class=\"o\">=</span> <span class=\"n\">add_auto_tapers</span><span class=\"p\">(</span>\n<span class=\"w\">    </span>    <span class=\"n\">component</span><span class=\"p\">,</span> <span class=\"n\">ports1_</span><span class=\"p\">,</span> <span class=\"n\">cross_section</span><span class=\"o\">=</span><span class=\"n\">xs</span><span class=\"p\">,</span> <span class=\"n\">layer_transitions</span><span class=\"o\">=</span><span class=\"n\">layer_transitions</span>\n<span class=\"w\">    </span><span class=\"p\">)</span>\n  File <span class=\"nb\">&quot;/var/home/bleroux/Documents/stage_IEMN/analog-asic-design/designs/inverter-py/.venv/lib/python3.13/site-packages/gdsfactory/routing/auto_taper.py&quot;</span>, line <span class=\"m\">115</span>, in <span class=\"n\">add_auto_tapers</span>\n<span class=\"w\">    </span><span class=\"k\">raise</span> <span class=\"ne\">ValueError</span><span class=\"p\">(</span>\n<span class=\"w\">    </span>    <span class=\"sa\">f</span><span class=\"s2\">&quot;Taper component ports do not match the port&#39;s layer and width!</span><span class=\"se\">\\n</span><span class=\"s2\">Taper name: </span><span class=\"si\">{</span><span class=\"n\">taper_component</span><span class=\"o\">.</span><span class=\"n\">name</span><span class=\"si\">}</span><span class=\"se\">\\n</span><span class=\"s2\">Ports: </span><span class=\"si\">{</span><span class=\"n\">taper_ports</span><span class=\"si\">}</span><span class=\"se\">\\n</span><span class=\"s2\">Cross-section: </span><span class=\"si\">{</span><span class=\"n\">layer</span><span class=\"si\">=}</span><span class=\"s2\">, </span><span class=\"si\">{</span><span class=\"n\">width</span><span class=\"si\">=}</span><span class=\"s2\">&quot;</span>\n<span class=\"w\">    </span><span class=\"p\">)</span>\n<span class=\"gr\">ValueError</span>: <span class=\"n\">Taper component ports do not match the port&#39;s layer and width!</span>\n<span class=\"x\">Taper name: taper_gdsfactorypcomponentsptapersptaper_L10_W0p26_W0p2_f622bd27</span>\n<span class=\"x\">Ports: [DPort(self.name=&#39;e1&#39;, self.width=0.26, trans=r180 *1 0,0, layer=TopMetal2drawing (134/0), port_type=electrical), DPort(self.name=&#39;e2&#39;, self.width=0.28, trans=r0 *1 10,0, layer=TopMetal2drawing (134/0), port_type=electrical)]</span>\n<span class=\"x\">Cross-section: layer=178, width=0.26</span>\n</pre></div>\n</span>",
+          "mimetype": "application/vnd.marimo+traceback"
+        }
+      ]
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "474a9addab7b48a9024479ecf43eff23",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='lEQa-0' random-id='2626c61b-6b30-f362-6227-7061c2aba01d'><marimo-slider data-initial-value='0.5' data-label='null' data-start='0.5' data-stop='6.0' data-steps='[]' data-debounce='false' data-disabled='false' data-orientation='&quot;horizontal&quot;' data-show-value='false' data-include-input='false' data-full-width='false'></marimo-slider></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": null,
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}

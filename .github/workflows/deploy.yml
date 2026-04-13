@@ -33,7 +33,7 @@ jobs:
 
             - name: 📄 Export notebook
               run: |
-                  uv run pip install marimo && uv run marimo export html-wasm designs/nmos/web-app/nmos.py -o _nmos --show-code --mode run
+                  uv run marimo export html-wasm designs/nmos/nmos.py -o _nmos --show-code --mode run
 
             - name: 📦 Upload Pages Artifact
               uses: actions/upload-pages-artifact@v3

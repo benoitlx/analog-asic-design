@@ -1,0 +1,19 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 16/04/2026 16:07
+
+* cell TOP
+* pin GND
+* pin VOUT
+* pin NET1
+* pin VDD
+.SUBCKT TOP GND VOUT NET1 VDD
+* device instance $1 r0 *1 0,0 sg13_lv_nmos
+M$1 GND NET1 VOUT \$1 sg13_lv_nmos L=0.13u W=0.15u AS=0.1005p AD=0.1005p
++ PS=1.34u PD=1.34u
+* device instance $2 r0 *1 0,1.055 sg13_lv_pmos
+M$2 VDD NET1 VOUT \$2 sg13_lv_pmos L=0.13u W=0.15u AS=0.1005p AD=0.1005p
++ PS=1.34u PD=1.34u
+* device instance $3 r0 *1 0,2.095 ntap1
+R$3 \$2 VDD ntap1 A=0.6084p P=3.12u
+* device instance $4 r0 *1 0,-0.895 ptap1
+R$4 \$1 GND ptap1 A=0.6084p P=3.12u
+.ENDS TOP

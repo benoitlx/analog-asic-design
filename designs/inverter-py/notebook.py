@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.21.1"
+__generated_with = "0.23.1"
 app = marimo.App(width="medium")
 
 
@@ -104,7 +104,7 @@ def _(gf, ihp, nmos, pmos):
 
         #gf.routing.route_bundle_electrical(c, [c_top.ports["D"]], [c_bot.ports["D"]], layer=(8, 2), route_width=1.0)
         ihp.tech.metal1_routing(c, width=2.0, layer=(8, 2), port_names=("D", "D"))
-    
+
         return c
 
 

@@ -46,7 +46,14 @@
   (
     key: "bsim",
     short: "BSIM",
-    long: "Berkeley Short-channel IGFET Model"
+    long: "Berkeley Short-channel IGFET Model",
+    description: "MOS model"
+  ),
+  (
+    key: "psp",
+    short: "PSP",
+    long: "Philips Penn State",
+    description: "MOS model"
   )
 )
 #register-glossary(gloss)
@@ -129,6 +136,7 @@ In the rest of this paper we will use xschem for schematic capture.
 
 - Magic
 - KLayout
+- gdsfactory -> Project seems young and the framework for ihp sg13g2 is a bit misleading (I will try to make my own abstraction of klayout scripting in python)
 
 == Verification
 
@@ -219,12 +227,65 @@ I find it usefull to see the result of the simulation directly in our xschem win
 
 === Layout
 
+- J'ai essayé avec GDS Layout, mais trop d'erreur lors du routage plus les llms galèrent un peu avec cette librairie
+- J'ai essayé avec les macros python de klayout, mais le routage doit être manuel et l'IA galère à faire des routages correct (ils n'ont pas conscience des DRC)
+
+=> Design du layout à la main dans klayout
+
+#figure(image("assets/inverter/layout.png", height: 50%), caption: [Layout of the inverter])
+
+#figure(image("assets/inverter/3d.png", height: 40%), caption: [3D view of the inverter])
+
 === Post-Layout Checks
+
+==== DRC
+
+Il suffit de lancer le DRC et coriger erreur par erreur. Les différentes erreurs sont expliquées dans le pdf os_layout_rules du #gls("pdk").
+
+#figure(image("assets/inverter/DRC rule example.png", height: 40%), caption: [Example of NWell rule])
+
+==== LVS
+
+Cette étape permet de comparer la netlist généré à partir de la saisie schématique et la netlist généré à partir du layout, pour vérifier que le layout correspond bien à la schématique saisie.
+
+Dans xschem:
+- top level is a .subckt
+- disable spicefix attribute
+
+générer la liste et remove les .include et éléments propre à la simulation.
+s'assurer que le nom après le subckt colle avec le top level element dans klayout (c'est souvent TOP qu'il faut mettre).
+
+Dans klayout LVS option:
+- aller chercher la netlist
+- cocher:
+  - spice comments
+  - top level pins
+  - verbose
+
+
 
 
 == Current Mirror
 
+A current mirror allow the copy of a current in one active device to another. It will be usefull in other designs as it allows to keep the current constant independently of the load while making it controlable.
+
+=== Schematic
+
+#figure(image("assets/current_mirror/schematic.png", height: 40%), caption: [Schematic Entry for a simple current mirror])
+
+=== Simulation
+
+#figure(image("assets/current_mirror/simulation.png", height: 40%), caption: [Static simulation for the current mirror])
+
+=== Layout
+
+#figure(image("assets/current_mirror/layout.png", height: 40%), caption: [Layout of a current Mirror]) <curr_mir_lay>
+
+#figure(image("assets/current_mirror/3d.png", height: 40%), caption: [3D view of the layout from @curr_mir_lay])
+
 == Operationnal Amplifier
+
+#figure(image("assets/opamp/schema.png", width: 90%), caption: [Example of an opamp schematic with BJT transistors])
 
 == Howland pump
 
@@ -261,3 +322,25 @@ The circuit can be decomposed into 3 parts:
 = Glossary
 
 #print-glossary(gloss, show-all: true)
+
+= References
+
+== Papers and books
+
+- IHP SG13G2 Layout Rules rev 4.0
+- Cécile Ghouila-Houri, J. Claudel, J.C. Gerbedoen, Q. Gallas, E. Garnier, et al.. High temperature gradient micro-sensor for wall shear stress and flow direction measurements. Applied Physics Letters, 2016, 109 (241905), 4 p. ￿10.1063/1.4972402￿. ￿hal-01432
+- Cécile Ghouila-Houri, Abdelkrim Talbi, Romain Viard, Quentin Gallas, Eric Garnier, et al.. MEMS High Tem- perature Gradient Sensor for Skin-Friction Measurements in Highly Turbulent Flows. IEEE Sensors Journal, 2021, 21 (8), pp.9749-9755. ⟨10.1109/JSEN.2020.2991785⟩. ⟨hal-03229029⟩
+- Analog (Integrated) Circuit Design - Harald Pretl Johannes Kepler University harald.pretl\@jku.at - Michael Koefinger - Simon Dorrer
+- Analysis and design of Elementary MOS amplifier stages - Boris Murmann
+- CMOS VLSI design A circuit and system perspective - Neil H. E. Weste - David Money Harris
+- Sub-Miniature Hot-Wire Anemometry for High Reynolds Number Turbulent Flows - Milad Samie
+- FOSS CAD/EDA Tools Supporting The European Open Access PDK Initiative - FOSSDEM 2024
+
+== Github and links
+
+- https://github.com/diegohernando/caravel_fulgor_opamp
+- https://tinytapeout.com/chips/tt06/tt_um_dsatizabal_opamp
+- https://github.com/TechBlueprint-V/Two-stage-Op-amp
+- https://github.com/iic-jku/iic-osic-tools
+- https://github.com/IHP-GmbH/IHP-Open-PDK
+- https://europractice-ic.com/schedules-prices-2026/

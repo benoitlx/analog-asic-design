@@ -1,0 +1,57 @@
+** sch_path: /var/home/bleroux/Documents/stage_IEMN/analog-asic-design/designs/opamp/testbench.sch
+**.subckt testbench
+V2 Vdd 0 DC 1.8 AC 1
+V1 Vn 0 DC 0.905 AC 0.1
+V3 Vp 0 DC 0.895 AC -0.1
+I0 Vdd net1 10u
+C1 Vout 0 1p
+x1 Vdd net1 Vn Vp Vout 0 opamp
+**** begin user architecture code
+
+.lib cornerMOSlv.lib mos_tt
+
+
+
+.control
+
+ac dec 100 1 1G
+let diff_in = v(Vp) - v(Vn)
+let diff_gain = v(Vout)/diff_in
+let psrr_plus = v(Vout)/v(Vdd)
+
+plot db(diff_gain)
+plot db(psrr_plus)
+
+.endc
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  /var/home/bleroux/Documents/stage_IEMN/analog-asic-design/designs/opamp/opamp.sym # of pins=6
+** sym_path: /var/home/bleroux/Documents/stage_IEMN/analog-asic-design/designs/opamp/opamp.sym
+** sch_path: /var/home/bleroux/Documents/stage_IEMN/analog-asic-design/designs/opamp/opamp.sch
+.subckt opamp VDD Vref Vn Vp Vout Vss
+*.ipin Vn
+*.ipin Vp
+*.opin Vout
+*.iopin VDD
+*.iopin Vref
+*.iopin Vss
+**** begin user architecture code
+
+.lib cornerMOSlv.lib mos_tt
+
+**** end user architecture code
+XM3 net2 Vn net1 net1 sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM4 net3 Vp net1 net1 sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM5 net2 net2 VDD VDD sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM6 net3 net2 VDD VDD sg13_lv_pmos w=0.15u l=0.13u ng=1
+XM7 net1 Vref Vss Vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM8 Vout Vref Vss Vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM9 Vref Vref Vss Vss sg13_lv_nmos w=0.15u l=0.13u ng=1
+XM10 Vout net3 VDD VDD sg13_lv_pmos w=0.15u l=0.13u ng=1
+C1 Vout net3 10p
+.ends
+
+.end

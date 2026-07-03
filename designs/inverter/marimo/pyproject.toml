@@ -1,0 +1,10 @@
+[project]
+name = "layout"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "klayout>=0.30.7",
+    "marimo>=0.22.0",
+]
